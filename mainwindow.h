@@ -7,6 +7,8 @@ namespace Ui {
 class MainWindow;
 }
 
+class Downloader;
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -15,6 +17,10 @@ public:
     explicit MainWindow(QWidget *parent = 0);
 
     ~MainWindow();
+
+private slots:
+    void download();
+
 
 private:
     Ui::MainWindow *ui;
