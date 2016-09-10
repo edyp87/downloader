@@ -7,6 +7,8 @@ namespace Ui {
 class MainWindow;
 }
 
+class QNetworkReply;
+
 class Downloader;
 
 class MainWindow : public QMainWindow
@@ -24,6 +26,8 @@ private slots:
 
 
 private:
+    void connectProgressBar(QNetworkReply *reply);
+
     Ui::MainWindow *ui;
 };
 
