@@ -20,5 +20,17 @@ void MainWindow::download()
 {
     QString url = ui->urlEdit->text();
     Downloader *downloader = new Downloader(url, this);
-    downloader->download();
+    QNetworkReply *reply = downloader->download();
+    QObject::connect(reply, &QNetworkReply::downloadProgress,
+                     this, &MainWindow::updateProgressBar);
+
+}
+
+void MainWindow::updateProgressBar(qint64 a, qint64 b)
+{
+    if (b > 0)
+    {
+        qDebug() << "Downloading " << a << "/" << b << "%" << 100.0*((double)a/(double)b);
+        ui->progressBar->setValue(100.0*((double)a/(double)b));
+    }
 }

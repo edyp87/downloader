@@ -23,7 +23,7 @@
       <item row="0" column="0">
        <widget class="QLineEdit" name="urlEdit">
         <property name="text">
-         <string>http://icons.iconarchive.com/icons/alecive/flatwoken/512/Apps-Qt-icon.png</string>
+         <string>http://rab.ict.pwr.wroc.pl/~kreczmer/wds/prezentacje/qt-kompilacja.pdf</string>
         </property>
        </widget>
       </item>
@@ -31,6 +31,22 @@
        <widget class="QPushButton" name="downloadButton">
         <property name="text">
          <string>Download</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QProgressBar" name="progressBar">
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="textVisible">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
         </property>
        </widget>
       </item>

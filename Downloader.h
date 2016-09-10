@@ -10,7 +10,7 @@ public:
     virtual ~Downloader();
 
     Downloader(QUrl url, QObject *parent = 0);
-    void download();
+    QNetworkReply *download();
     QByteArray getDownloadedData() const;
     bool save(const QString &filename);
 

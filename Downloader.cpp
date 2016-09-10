@@ -10,11 +10,12 @@ Downloader::Downloader(QUrl url, QObject *parent) : QObject(parent), m_url(url)
                      this, &Downloader::downloadedSlot);
 }
 
-void Downloader::download()
+QNetworkReply *Downloader::download()
 {
     qDebug() << "Downloading " + m_url.toString();
     QNetworkRequest request(m_url);
-    m_networkAccessManager.get(request);
+    QNetworkReply *reply = m_networkAccessManager.get(request);
+    return reply;
 }
 
 QByteArray Downloader::getDownloadedData() const

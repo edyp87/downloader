@@ -20,6 +20,7 @@ public:
 
 private slots:
     void download();
+    void updateProgressBar(qint64 a, qint64 b);
 
 
 private:
